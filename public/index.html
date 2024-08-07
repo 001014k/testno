@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html,
+      body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+  </head>
+  <body class="flex flex-col items-center bg-[#080808] text-[#9c9c9c] p-6">
+    <div class="w-full max-w-screen-2xl flex flex-col md:flex-row justify-between items-center px-4 py-8 mt-20 bg-[#080808]">
+      <div class="flex flex-col justify-between items-start mt-8 md:mt-0 space-y-4 text-white">
+        <div>
+          <h1 class="text-4xl font-bold">홈페이지</h1>
+          <p class="text-sm mt-2">
+            저의 홈페이지에 오신 것을 환영합니다
+          </p>
+        </div>
+        <button class="flex items-center space-x-2 px-6 py-3 bg-[#3f8e00] border border-[#62ba1b] rounded shadow-lg shadow-[#3f8e00]/50 text-white font-bold">
+          <a href="Profile.html">Let's get started</a>
+          <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.63335 4.87364L1.51379 0.759206C1.16776 0.413598 0.605566 0.413598 0.259528 0.759206C-0.0865095 1.10481 -0.0865095 1.66631 0.259528 2.01191L3.75196 5.5L0.259528 8.9881C-0.0865095 9.3337 -0.0865095 9.8952 0.259528 10.2408C0.432545 10.4136 0.65957 10.5 0.886652 10.5C1.11373 10.5 1.34078 10.4136 1.51378 10.2408L5.63333 6.12637C5.97937 5.78076 5.97937 5.21927 5.63333 4.87366L5.63335 4.87364Z" fill="white"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="flex items-center w-72 h-72 mt-8 md:mt-0 bg-cover bg-no-repeat bg-center" style="background-image: url('photo-here.png');">
+        <img class="rounded-full" src="kimmj.png" alt="Profile Photo" />
+      </div>
+    </div>
+  </body>
+</html>

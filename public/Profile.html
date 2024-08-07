@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html, body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body class="bg-[#080808] text-[#9c9c9c] flex flex-col items-center p-4">
+    <div class="fixed top-0 left-0 right-0 flex justify-between items-start w-full bg-[#080808] py-4 px-6">
+        <a href="index.html" class="text-sm px-2">Home</a>
+        <a href="Profile.html" class="text-sm px-2">Profile</a>
+        <a href="Gallery.html" class="text-sm px-2">Gallery</a>
+        <a href="Study.html" class="text-sm px-2">Study</a>
+        <a href="Todolist.html" class="text-sm px-2">Todolist</a>
+        <a href="usermanage.html" class="text-sm px-2">Usermanage</a>
+      </div>
+    <div class="testimonial-section w-full max-w-screen-xl relative">
+        <div class="background w-full h-full absolute left-0 top-0 bg-[#080808]"></div>
+        <div class="intro-text-container flex flex-col justify-center items-center md:items-start md:absolute md:left-[355px] md:top-[130px] gap-2.5 mt-8 md:mt-0">
+            <p class="intro-text w-full max-w-md md:max-w-lg text-sm text-center md:text-left">
+                대구가톨릭대학교 컴퓨터공학전공 4학년 김명종
+            </p>
+        </div>
+        <div class="title-container flex justify-center items-center mt-4 md:absolute md:left-[535.5px] md:top-20">
+            <p class="title text-2xl md:text-[34px] font-bold text-center text-white">
+                Profile
+            </p>
+        </div>
+        <div class="testimonial-box w-full max-w-lg h-auto md:w-[445px] md:h-[212px] mx-auto md:mx-0 mb-4 md:absolute md:left-[655px] md:top-[512px] p-4 bg-[#1c1c1c] rounded-md">
+            <div class="client-info flex items-center gap-2.5">
+                <p class="quote-symbol text-[40px] text-white">“</p>
+                <p class="client-name text-lg font-bold text-white">
+                    기술(개발경험)
+                </p>
+            </div>
+            <p class="testimonial-text text-sm mt-4">
+                캡스톤에서 AI 부분을 맡아 사진을 이용해 방 종류,분위기를 파악해 사용자에게 제공하는 모델을 제작
+                개인 프로젝트로 현재 Flutter를 활용해 여행앱을 만드는중입니다
+            </p>
+        </div>
+        <div class="testimonial-box w-full max-w-lg h-auto md:w-[445px] md:h-[212px] mx-auto md:mx-0 mb-4 md:absolute md:left-[180px] md:top-[512px] p-4 bg-[#1c1c1c] rounded-md">
+            <div class="client-info flex items-center gap-2.5">
+                <p class="quote-symbol text-[40px] text-white">“</p>
+                <p class="client-name text-lg font-bold text-white">
+                    앞으로의 계획
+                </p>
+            </div>
+            <p class="testimonial-text text-sm mt-4">
+                지금 플러터로 만들고 있는 개인(사이드) 프로젝트를 완성하여 구글스토어,앱스토어에 출시할 예정입니다
+                풀스택 교육과정을 들고 교육과정을 통해 추후에 아이디어를 생각해 만들고 싶은 웹앱 개발을 하고 싶습니다
+            </p>
+        </div>
+        <div class="testimonial-box w-full max-w-lg h-auto md:w-[445px] md:h-[212px] mx-auto md:mx-0 mb-4 md:absolute md:left-[655px] md:top-[238px] p-4 bg-[#1c1c1c] rounded-md">
+            <div class="client-info flex items-center gap-2.5">
+                <p class="quote-symbol text-[40px] text-white">“</p>
+                <p class="client-name text-lg font-bold text-white">
+                    풀스택 교육 과정에 대한 다짐
+                </p>
+            </div>
+            <p class="testimonial-text text-sm mt-4">
+                풀스택 교육과정을 들으면서 성실히 임할것입니다
+            </p>
+        </div>
+        <div class="testimonial-box w-full max-w-lg h-auto md:w-[445px] md:h-[212px] mx-auto md:mx-0 mb-4 md:absolute md:left-[180px] md:top-[238px] p-4 bg-[#1c1c1c] rounded-md">
+            <div class="client-info flex items-center gap-2.5">
+                <p class="quote-symbol text-[40px] text-white">“</p>
+                <p class="client-name text-lg font-bold text-white">
+                    추가할 제목
+                </p>
+            </div>
+            <p class="testimonial-text text-sm mt-4">
+                추가할 내용
+            </p>
+        </div>
+    </div>
+</body>
+</html>
