@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html,
+    body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#080808] text-white flex flex-col items-center justify-center">
+
+  <nav class="fixed top-0 left-0 right-0 flex justify-between items-center w-full bg-[#080808] py-4 px-6">
+    <a href="index.html" class="text-sm px-2">Home</a>
+    <a href="Profile.html" class="text-sm px-2">Profile</a>
+    <a href="Gallery.html" class="text-sm px-2">Gallery</a>
+    <a href="Study.html" class="text-sm px-2">Study</a>
+    <a href="Todolist.html" class="text-sm px-2">Todolist</a>
+    <a href="usermanage.html" class="text-sm px-2">Usermanage</a>
+    <a href="market.html" class="text-sm px-2">Market</a>
+    <a href="cart.html" class="text-sm px-2">Pay</a>
+  </nav>
+
+  <div class="container flex flex-col lg:flex-row justify-between items-start w-full lg:w-3/4 xl:w-2/3 mt-20">
+
+    <div class="order-2 lg:order-1 w-full lg:w-1/2 p-4">
+      <div class="bg-white rounded-lg shadow-lg p-4 mb-4">
+        <p class="text-lg font-semibold text-[#1e1e1e]">Shopping</p>
+        <p class="text-lg font-medium text-[#1e1e1e] mt-8">장바구니</p>
+        <p class="text-sm font-medium text-[#1e1e1e] mt-4">물품 내용</p>
+      </div>
+      <div class="container">
+
+      </div>
+    </div>
+
+    <div class="order-1 lg:order-2 w-full lg:w-1/2 p-4">
+      <div class="bg-[#708090] rounded-[20px] p-6">
+        <p class="text-[22px] font-semibold text-[#fefcfc]">카드 입력</p>
+
+        <div class="mt-6">
+          <p class="text-sm font-medium text-[#fefcfc]">카드 종류</p>
+          <div class="flex mt-2">
+            <img src="mastercard.png" class="w-[75px] h-[55px] rounded-[5px] mr-2" />
+            <img src="visa.png" class="w-[75px] h-[55px] rounded-[5px] mr-2" />
+            <img src="paypal.png" class="w-[75px] h-[55px] rounded-[5px] mr-2" />
+            <div class="w-[75px] h-[55px] rounded-[5px] bg-[#d9d9d9]/20 flex items-center justify-center text-[#fefcfc] font-bold">
+              모두보기
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <p class="text-sm font-medium text-[#fefcfc]">카드 이름</p>
+          <input type="text" class="w-full h-10 mt-2 rounded-md bg-[#ffffff] px-2 text-[#c4c4c4]" placeholder="이름" />
+        </div>
+
+        <div class="mt-6">
+          <p class="text-sm font-medium text-[#fefcfc]">카드 번호</p>
+          <input type="text" class="w-full h-10 mt-2 rounded-md bg-[#ffffff] px-2 text-[#c4c4c4]" placeholder="1111 2222 3333 4444" />
+        </div>
+
+        <div class="flex mt-6 space-x-4">
+          <div class="w-1/2">
+            <p class="text-sm font-medium text-[#fefcfc]">카드 만료일</p>
+            <input type="text" class="w-full h-10 mt-2 rounded-md bg-[#ffffff] px-2 text-[#c4c4c4]" placeholder="mm/yy" />
+          </div>
+          <div class="w-1/2">
+            <p class="text-sm font-medium text-[#fefcfc]">CVV</p>
+            <input type="text" class="w-full h-10 mt-2 rounded-md bg-[#ffffff] px-2 text-[#c4c4c4]" placeholder="123" />
+          </div>
+        </div>
+
+        <div class="mt-6 border-t border-[#5F65C3] pt-6">
+          <div class="flex justify-between order-2">
+            <p class="text-sm font-medium text-[#fefcfc]">가격</p>
+            <p class="total text-sm font-medium text-right text-[#fefcfc]">0₩</p>
+          </div>
+          <div class="flex justify-between mt-2">
+            <p class="text-sm font-medium text-[#fefcfc]">배달비</p>
+            <p class="text-sm font-medium text-right text-[#fefcfc]">50₩</p>
+          </div>
+          <div class="flex justify-between mt-2 order-2">
+            <p class="text-sm font-medium text-[#fefcfc]">총 가격(배달비 포함)</p>
+            <p class="total-amount text-sm font-medium text-right text-[#fefcfc]">0₩</p>
+          </div>
+
+          <button class="w-full h-12 mt-6 rounded-md bg-[#fefcfc] text-[#000000] text-lg font-semibold">결제</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+      var total = 0;
+      var cartItemsHtml = cart.map(function (item, index){
+        var itemTotal = item.price * item.quantify;
+        total += itemTotal;
+        return `
+                    <div class="bg-white rounded-lg shadow-lg p-4 mb-4">
+                        <div class="flex items-center justify-between">
+                            <img src="4000.png" class="w-20 h-20 rounded-lg" />
+                            <div class="flex flex-col w-2/3 ml-4">
+                                <p class="text-lg font-medium text-[#1e1e1e]">${item.name}</p>
+                                <p class="text-sm font-medium text-[#1e1e1e]">수량: ${item.quantify}</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm font-medium text-[#393939]">$${itemTotal.toFixed(2)}</p>
+                            </div>
+                        </div>
+                    </div>`;
+      }).join("");
+
+    document.querySelector(".order-2 .container").innerHTML = cartItemsHtml;
+    document.querySelector(".order-2 .total").textContent = `$${total.toFixed(2)}`;
+    document.querySelector(".order-2 .total-amount").textContent = `$${(total + 50).toFixed(2)}`;
+    });
+
+    function removeCartItem(index) {
+      var cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+      cart.splice(index,1);
+      sessionStorage.setItem("cart", JSON.stringify(cart));
+      location.reload();
+    }
+  </script>
+</body>
+
+</html>
